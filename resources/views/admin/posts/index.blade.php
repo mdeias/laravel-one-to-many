@@ -45,6 +45,17 @@
             </tbody>
           </table>
           {{ $posts->links() }}
+
+          @foreach ($categories as $category)
+            <h3>{{$category->name}}</h3>
+            <ul>
+              @foreach ($category->posts as $post_category)
+                <li>
+                  <a href="{{ route('admin.posts.show', $post_category) }}">{{$post_category->title}}</a>
+                </li>
+              @endforeach
+            </ul>
+          @endforeach
     </div>
 </div>
 @endsection

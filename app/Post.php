@@ -14,7 +14,7 @@ class Post extends Model
         return $this->belongsTo('App\Category');
     }
 
-    protected $fillable = ['title', 'content', 'slug'];
+    protected $fillable = ['title', 'content', 'slug', 'category_id'];
 
     public static function generateSlug($title){
 
